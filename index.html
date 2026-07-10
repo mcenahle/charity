@@ -34,10 +34,15 @@
       }
 
       .navbar-brand,
-      .navbar-toggler,
-      .navbar-nav {
+      .navbar-toggler {
         margin-left: 12px !important;
         margin-right: 12px !important;
+      }
+
+      @media (max-width: 992px) {
+        .navbar-nav {
+          margin-left: 12px !important;
+        }
       }
 
       .bg-custom {
@@ -123,16 +128,45 @@
 
       <!-- Navbar links -->
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ms-auto me-3">
           <li class="nav-item">
-            <a class="nav-link" href="https://hi.mcenahle.page"
-              >个人主页网站 <span class="mdi--external-link"></span
+            <a
+              class="nav-link"
+              href="https://www.hhax.org/"
+              target="_blank"
+              style="display: flex; justify-content: space-between"
+              >北京韩红爱心慈善基金会&nbsp;<span
+                class="mdi--external-link"
+              ></span
             ></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://blog.mcenahle.page"
-              >博客网站（梅之夏） <span class="mdi--external-link"></span
-            ></a>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbardrop"
+              data-bs-toggle="dropdown"
+            >
+              个人运行的网站
+            </a>
+            <div
+              class="dropdown-menu m-0 border-0 shadow-sm p-2 dropdown-menu-end"
+            >
+              <a
+                class="dropdown-item px-3 py-2 rounded"
+                href="https://hi.mcenahle.page"
+                target="_blank"
+                style="display: flex; justify-content: space-between"
+                >个人主页网站 <span class="mdi--external-link"></span
+              ></a>
+              <a
+                class="dropdown-item px-3 py-2 rounded"
+                href="https://blog.mcenahle.page"
+                target="_blank"
+                style="display: flex; justify-content: space-between"
+                >博客网站（梅之夏）<span class="mdi--external-link"></span
+              ></a>
+            </div>
           </li>
         </ul>
       </div>
