@@ -12,6 +12,27 @@
     <link href="/icons.css" rel="stylesheet" />
 
     <style>
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("/hospital.jpg");
+        background-repeat: no-repeat;
+        background-size: auto 140%;
+        background-position: center;
+
+        opacity: 0.3;
+
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .card {
+        background: rgb(255 255 255 / 0.5);
+      }
+
       .navbar-brand,
       .navbar-toggler,
       .navbar-nav {
