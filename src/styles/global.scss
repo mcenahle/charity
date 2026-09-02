@@ -24,7 +24,7 @@ body::before {
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-  opacity: 0.2;
+  opacity: 0.4;
   z-index: -1;
   pointer-events: none;
 }
@@ -125,4 +125,15 @@ pre code.hljs {
   text-indent: 2em;
   font-size: 16px;
   line-height: 1.6em;
+}
+
+.btn-gold {
+  background-color: #dbbe8c;
+  color: white;
+  border-color: 1px solid #b08d4f;
+  &:hover,
+  &:focus {
+    background-color: #bba278;
+    color: white;
+  }
 }
