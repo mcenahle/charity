@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+const allDonations = Object.values(
+  import.meta.glob("./donations/*.md", { eager: true }),
+).sort(
+  (a: any, b: any) =>
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime(),
+);
+---
+
+<Layout>
+  <h2>公益记录</h2>
+  <div class="article">
+    <p>记录个人参与公益事业的点滴。金额虽小，善意长存。</p>
+    <p>本网站仅用于记录个人公益参与情况，<b>非接受捐赠之用</b>。</p>
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-indent: 0em;">
+          <Icon name="mdi:routes-clock" /> 关于近期捐赠计划的说明
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          鉴于北京韩红爱心慈善基金会发起人韩红近期涉及《天路》相关争议，且目前公开信息中仍存在需要进一步核实之处，我决定暂时停止向该基金会进行新的捐赠，等待相关事实进一步明确后再作决定。
+        </p>
+
+        <p>
+          此次暂停不代表本人认定北京韩红爱心慈善基金会存在善款管理或项目执行方面的问题，也不影响此前已经完成的捐赠记录。
+        </p>
+
+        <p style="text-align: right"><i>（发布日期：2026年9月1日）</i></p>
+      </div>
+    </div>
+    <p>以下是我的捐款记录：</p>
+    <ul style="text-indent: 0em;">
+      {
+        allDonations.map((post: any) => (
+          <li>
+            <a href={post.url}>
+              <u>{post.frontmatter.title}</u>{" "}
+              <Icon name="mdi:arrow-top-right" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
